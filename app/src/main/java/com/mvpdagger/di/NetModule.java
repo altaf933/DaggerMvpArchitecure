@@ -45,8 +45,7 @@ public class NetModule {
     }
 
 
-    @Singleton
-    @Provides
+
     public Retrofit createRetrofitBuilder(Retrofit.Builder builder, OkHttpClient okHttpClient) {
         return builder.baseUrl(ApiFixer.HOST)
                 .client(okHttpClient)
@@ -118,8 +117,15 @@ public class NetModule {
 
     @Provides
     @Singleton
+    ApiFixer provideApiFixer(Retrofit retrofit){
+        return  retrofit.create(ApiFixer.class);
+    }
+
+    @Provides
+    @Singleton
     public Retrofit provideFixerApi(Retrofit.Builder builder, OkHttpClient okHttpClient) {
         return createRetrofitBuilder(builder, okHttpClient);
     }
+
 
 }
