@@ -3,6 +3,7 @@ package com.mvpdagger.api;
 import com.mvpdagger.model.FixerModel;
 
 import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 
@@ -17,4 +18,7 @@ public interface ApiFixer {
 
     @GET("{date}")
     Flowable<FixerModel> getExchangePrice(@Path("date") String date);
+
+    @GET("{date}")
+    Observable<FixerModel> getExchangePriceObser(@Path("date")String date);
 }

@@ -3,6 +3,7 @@ package com.mvpdagger.android;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.mvpdagger.base.BaseActivity;
 import com.mvpdagger.exchange.ExchangePresenter;
@@ -28,6 +29,7 @@ public class SampleDaggerMainActivity extends BaseActivity<ExchangePresenter> im
     @Override
     protected void onResume() {
         super.onResume();
+        mPresenter.attachView(this);
        // mPresenter = new ExchangePresenter();
         mPresenter.loadData();
 
@@ -45,7 +47,7 @@ public class SampleDaggerMainActivity extends BaseActivity<ExchangePresenter> im
 
     @Override
     public void showData(FixerModel fixerModel) {
-
+        Log.d("Activity",""+fixerModel.getRates().getBGN());
     }
 
     @Override
