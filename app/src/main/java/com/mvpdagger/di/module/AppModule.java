@@ -1,10 +1,12 @@
-package com.mvpdagger.di;
+package com.mvpdagger.di.module;
 
 import android.app.Application;
 
 import com.google.gson.annotations.SerializedName;
+import com.mvpdagger.api.ApiFixer;
 import com.mvpdagger.api.HttpHelper;
 import com.mvpdagger.api.RetrofitHelper;
+import com.mvpdagger.base.BasePresenter;
 
 import javax.inject.Singleton;
 
@@ -35,4 +37,8 @@ public class AppModule {
     HttpHelper provideRetrofitHelper(RetrofitHelper retrofitHelper){
         return retrofitHelper;
     }
+
+//    BasePresenter providePresenter(ApiFixer apiFixer){
+//        return new BasePresenter();
+//    }
 }

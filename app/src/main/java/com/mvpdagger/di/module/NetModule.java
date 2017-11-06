@@ -1,4 +1,4 @@
-package com.mvpdagger.di;
+package com.mvpdagger.di.module;
 
 import com.mvpdagger.android.BuildConfig;
 import com.mvpdagger.api.ApiFixer;

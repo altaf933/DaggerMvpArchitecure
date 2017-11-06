@@ -2,10 +2,11 @@ package com.mvpdagger.android;
 
 import android.app.Application;
 
-import com.mvpdagger.di.AppComponent;
-import com.mvpdagger.di.AppModule;
-import com.mvpdagger.di.DaggerAppComponent;
-import com.mvpdagger.di.NetModule;
+import com.mvpdagger.di.component.AppComponent;
+import com.mvpdagger.di.component.DaggerAppComponent;
+import com.mvpdagger.di.module.AppModule;
+import com.mvpdagger.di.module.NetModule;
+
 
 /**
  * Created by altafshaikh on 03/11/17.

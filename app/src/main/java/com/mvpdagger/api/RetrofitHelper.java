@@ -1,12 +1,16 @@
 package com.mvpdagger.api;
 
+import com.mvpdagger.model.FixerModel;
+
 import javax.inject.Inject;
+
+import io.reactivex.Flowable;
 
 /**
  * Created by altafshaikh on 03/11/17.
  */
 
-public class RetrofitHelper implements HttpHelper{
+public class RetrofitHelper implements HttpHelper {
 
     private ApiFixer apiFixer;
 
@@ -15,4 +19,8 @@ public class RetrofitHelper implements HttpHelper{
         this.apiFixer = apiFixer;
     }
 
+    @Override
+    public Flowable<FixerModel> getForexExchangeRate() {
+        return apiFixer.getExchangePrice("2017-01-03");
+    }
 }
